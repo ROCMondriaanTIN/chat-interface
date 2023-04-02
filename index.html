@@ -12,7 +12,7 @@
 </head>
 
 
-<body style="overflow: hidden;">
+<body>
 
     <!-- navbar -->
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
@@ -36,6 +36,18 @@
             </div>
         </div>
     </nav>
+
+    <div class="container mx-auto" id="alert-container" style="width: 680px; visibility: hidden;">
+        <article class="message is-warning is-active">
+            <div class="message-header">
+                <p>Let op</p>
+                <button class="delete" aria-label="delete" id="delete-message"></button>
+            </div>
+            <div class="message-body">
+                Input veld mag niet leeg zijn!
+            </div>
+        </article>
+    </div>
 
     <!-- Chat interface -->
     <div class="container is-fluid px-0" style="position: fixed; bottom: 0; min-height: 64px;">
@@ -69,7 +81,7 @@
                 <input class="input mr-1" type="text" name="message" id="text-message" placeholder="Type message">
             </div>
             <div class="column is-2">
-                <button class="button is-link" type="button">Send</button>
+                <button class="button is-link" id="chat-send" type="button">Send</button>
             </div>
         </div>
     </div>
