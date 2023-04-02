@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Chat Interface</title>
+</head>
+
+
+<body style="overflow: hidden;">
+
+    <!-- navbar -->
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img class="mr-1" src="img/tux.webp" alt="We love OpenSource">
+                <h2><strong>Diskoord</strong></h2>
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chat interface -->
+    <div class="container is-fluid px-0" style="position: fixed; bottom: 0; min-height: 64px;">
+        <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
+            style="width: 680px; max-height: 565px; overflow-y: auto;">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        1. Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi
+                        porta
+                        gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                        ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        2. Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi
+                        porta
+                        gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                        ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="is-flex is-justify-content-center my-0 mx-auto columns" id="chat-input"
+            style="width: 680px; height: 100%;">
+            <div class="column is-10">
+                <input class="input mr-1" type="text" name="message" id="text-message" placeholder="Type message">
+            </div>
+            <div class="column is-2">
+                <button class="button is-link" type="button">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
