@@ -13,60 +13,134 @@
 
 
 <body>
+    <!-- authentication -->
+    <section style="display: none;">
+        <div class="container" style="width: 600px;">
 
-    <!-- navbar -->
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img class="mr-1" src="img/tux.webp" alt="We love OpenSource">
-                <h2><strong>Diskoord</strong></h2>
-            </a>
-        </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                    <span class="icon is-small is-left">
+                        <img src="img/email.svg" alt="email">
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                </div>
+                <p class="help is-danger">This email is invalid</p>
+            </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-success" type="text" placeholder="Password" value="bulma">
+                    <span class="icon is-small is-left">
+                        <img src="img/password.svg" alt="email">
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <p class="help is-success">This username is available</p>
+            </div>
+
+
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <div class="container mx-auto" id="alert-container" style="width: 680px; visibility: hidden;">
-        <article class="message is-warning is-active">
-            <div class="message-header">
-                <p>Let op</p>
-                <button class="delete" aria-label="delete" id="delete-message"></button>
+    <section>
+        <!-- navbar -->
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img class="mr-1" src="img/tux.webp" alt="We love OpenSource">
+                    <h2><strong>Diskoord</strong></h2>
+                </a>
             </div>
-            <div class="message-body">
-                Input veld mag niet leeg zijn!
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                </div>
             </div>
-        </article>
-    </div>
+        </nav>
 
-    <!-- Chat interface -->
-    <div class="container is-fluid px-0" style="position: fixed; bottom: 0; min-height: 64px;">
-        <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
-            style="width: 680px; max-height: 565px; overflow-y: auto;">
+        <div class="hero is-fullheight">
+            <div class="columns">
+                <!-- Linker kolom -->
+                <div class="column is-one-quarter">Left</div>
 
-            <!-- Hier wordt vanuit JS berichten geinjecteerd -->
+                <!-- Midden kolom -->
+                <div class="column is-half container mx-auto" id="alert-container"
+                    style="width: 680px; visibility: hidden;">
+                    <article class="message is-warning is-active">
+                        <div class="message-header">
+                            <p>Let op</p>
+                            <button class="delete" aria-label="delete" id="delete-message"></button>
+                        </div>
+                        <div class="message-body">
+                            Input veld mag niet leeg zijn!
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Rechter kolom -->
+                <div class="column is-one-quarter is-danger">
+                    <!-- container om een list te tonen -->
+                    <div class="box is-fluid" style="float: left; width: 100%;">
+                        <h2>Friends</h2>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="is-flex is-justify-content-center my-0 mx-auto columns" id="chat-input"
-            style="width: 680px; height: 100%;">
-            <div class="column is-10">
-                <input class="input mr-1" type="text" name="message" id="text-message" placeholder="Type message">
+
+        <!-- Chat interface -->
+        <div class="container is-fluid px-0" style="position: fixed; bottom: 0; min-height: 64px;">
+            <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
+                style="max-width: 680px; max-height: 565px; overflow-y: auto;">
+
+                <!-- Hier wordt vanuit JS berichten geinjecteerd -->
+
             </div>
-            <div class="column is-2">
-                <button class="button is-link" id="chat-send" type="button">Send</button>
+            <div class="is-flex is-justify-content-center my-0 mx-auto columns" id="chat-input"
+                style="max-width: 680px; height: 100%;">
+                <div class="column is-10">
+                    <input class="input mr-1" type="text" name="message" id="text-message" placeholder="Type message">
+                </div>
+                <div class="column is-2">
+                    <button class="button is-link" id="chat-send" type="button">Send</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
 
 
