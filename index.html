@@ -92,7 +92,7 @@
             </div>
         </nav>
 
-        <div class="container is-fluid px-0">
+        <div class="container is-fluid px-0 mt-4" style="z-index: 10;">
             <div class="columns is-justify-content-space-between">
                 <!-- Linker kolom -->
                 <div class="column is-one-quarter">
@@ -104,20 +104,6 @@
                         <h2>Channels</h2>
                     </div>
                 </div>
-
-                <!-- Midden kolom -->
-                <!-- <div class="column is-half container mx-auto" id="alert-container"
-                    style="width: 680px; visibility: hidden;">
-                    <article class="message is-warning is-active">
-                        <div class="message-header">
-                            <p>Let op</p>
-                            <button class="delete" aria-label="delete" id="delete-message"></button>
-                        </div>
-                        <div class="message-body">
-                            Input veld mag niet leeg zijn!
-                        </div>
-                    </article>
-                </div> -->
 
                 <!-- Rechter kolom -->
                 <div class="column is-one-quarter is-danger">
@@ -133,12 +119,18 @@
 
         <!-- Chat interface -->
         <div class="container is-fluid px-0 is-warning" style="position: fixed; bottom: 0; min-height: 64px;">
-            <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
-                style="max-width: 680px; max-height: 565px; overflow-y: auto;">
 
-                <!-- Hier wordt vanuit JS berichten geinjecteerd -->
+            <div class="columns mb-0">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
+                        style="max-width: 680px; max-height: 565px; overflow-y: auto;">
 
+                        <!-- Hier wordt vanuit JS berichten geinjecteerd -->
+
+                    </div>
+                </div>
             </div>
+
 
             <div class="container is-fluid" style="background-color: rgb(241, 241, 241);">
                 <div class="is-flex is-justify-content-center my-0 mx-auto columns" id="chat-input"
