@@ -4,7 +4,67 @@ html,
 body {
 	height: 100vh;
 }
-
 body::-webkit-scrollbar {
 	display: none;
+}
+
+/* message box */
+.messagebox {
+	display: flex;
+	/* background-color: aquamarine; */
+	font-family: arial;
+	font-size: 0.9rem;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.message-alert {
+	border-left: 4px solid orange;
+}
+.messagebox__body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-right: 8px;
+}
+.messagebox__header {
+	font-weight: bold;
+	display: flex;
+	align-content: center;
+	padding: 4px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+
+	/* background-color: skyblue; */
+	border-bottom: 1px solid lightgray;
+}
+.messagebox__header .timestamp {
+	margin-left: 8px;
+	font-size: 0.75rem;
+	align-self: center;
+}
+.messagebox__sidebox {
+	width: 64px;
+	min-height: 64px;
+	padding: 2px;
+	margin-right: 4px;
+	box-sizing: border-box;
+}
+.messagebox__imgbox {
+	width: 48px;
+	height: 48px;
+	background-color: gray;
+	border-radius: 32px;
+	background-image: url();
+}
+.messagebox__imgbox img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.messagebox__content {
+	display: flex;
+	overflow-y: auto;
+	margin-top: 4px;
+}
+.bg_enable {
+	background-color: rgb(245, 245, 245);
 }

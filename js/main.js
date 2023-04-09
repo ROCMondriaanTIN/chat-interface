@@ -15,8 +15,8 @@ sendBtn.addEventListener("click", (e) => {
 		return;
 	}
 
-	// const msgBox = createMessageBox(message);
-	const msgBox = createMessage(message, toggle);
+	const msgBox = createMessageBox(message, toggle);
+	// const msgBox = createMessage(message, toggle);
 
 	msgContainer.innerHTML += msgBox;
 
@@ -33,19 +33,29 @@ msgInput.addEventListener("keypress", (e) => {
 	}
 });
 
-closeBtn.addEventListener("click", (e) => {
-	alert.style.visibility = "hidden";
-});
+// closeBtn.addEventListener("click", (e) => {
+// 	alert.style.visibility = "hidden";
+// });
 
-function createMessageBox(message) {
+function createMessageBox(message, toggle) {
 	const box = `
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        ${message}
-                    </div>
+            <div class="messagebox ${toggle ? "bg_enable" : ""}">
+            <div class="messagebox__sidebox">
+                <div class="messagebox__imgbox">
+                    <img src="https://cdn-icons-png.flaticon.com/512/147/147285.png" alt="avatar">
                 </div>
             </div>
+            <div class="messagebox__body">
+                <div class="messagebox__header">
+                    User 12345<span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                </div>
+                <div class="messagebox__content">
+                    ${message}
+                </div>
+            </div>
+            <div class="messagebox__footer">
+            </div>
+        </div>
     `;
 
 	return box;
