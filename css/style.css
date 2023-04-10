@@ -1,11 +1,29 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+:root {
+	--navheight: 56px;
+	--footerheight: 64px;
+}
+
 html,
 body {
 	height: 100vh;
 }
 body::-webkit-scrollbar {
 	display: none;
+}
+
+#middle-container {
+	height: calc(100vh - var(--navheight) - var(--footerheight));
+	z-index: 10;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#column-left {
+	text-align: end;
+	overflow-y: auto;
+	max-height: calc(100vh - var(--navheight) - var(--footerheight));
 }
 
 /* message box */
@@ -52,7 +70,7 @@ body::-webkit-scrollbar {
 .messagebox__imgbox {
 	width: 48px;
 	height: 48px;
-	background-color: gray;
+	background-color: rgb(227, 227, 227);
 	border-radius: 32px;
 	background-image: url();
 }

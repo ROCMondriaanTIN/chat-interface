@@ -42,7 +42,7 @@ function createMessageBox(message, toggle) {
             <div class="messagebox ${toggle ? "bg_enable" : ""}">
             <div class="messagebox__sidebox">
                 <div class="messagebox__imgbox">
-                    <img src="https://cdn-icons-png.flaticon.com/512/147/147285.png" alt="avatar">
+                    <img src=${toggle ? "../img/female.svg" : "../img/male.svg"} alt="avatar">
                 </div>
             </div>
             <div class="messagebox__body">
