@@ -1,5 +1,6 @@
 console.log("main.js loaded.");
 
+const scrollElement = document.querySelector("#column-chat");
 const msgContainer = document.querySelector("#chat-messages");
 const msgInput = document.querySelector("#text-message");
 const sendBtn = document.querySelector("#chat-send");
@@ -74,3 +75,21 @@ function createMessage(message, sending = true) {
 
 	return box;
 }
+
+// Auto scroll at new messages
+const onAppend = function (elem, f) {
+	const observer = new MutationObserver(function (mutations) {
+		mutations.forEach(function (m) {
+			if (m.addedNodes.length) {
+				f(m.addedNodes);
+			}
+		});
+	});
+	observer.observe(elem, { childList: true });
+};
+
+onAppend(msgContainer, function (added) {
+	console.log("onAdded: ", added);
+
+	msgContainer.scrollTop = msgContainer.scrollHeight;
+});
