@@ -25,6 +25,9 @@ body::-webkit-scrollbar {
 	overflow-y: auto;
 	max-height: calc(100vh - var(--navheight) - var(--footerheight));
 }
+#column-chat {
+	max-height: calc(100vh - var(--navheight) - var(--footerheight));
+}
 
 /* message box */
 .messagebox {

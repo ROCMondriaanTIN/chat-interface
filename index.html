@@ -70,7 +70,7 @@
     <section>
 
         <!-- navbar -->
-        <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation"
+        <nav class="navbar is-fixed-top is-mobile is-primary" role="navigation" aria-label="main navigation"
             style="position: fixed; top: 0;">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
@@ -93,7 +93,7 @@
             </div>
         </nav>
 
-        <div class="container is-fluid px-0" id="middle-container"
+        <div class="container is-mobile is-fluid px-0" id="middle-container"
             style="position: fixed; top: 56px; overflow: hidden;">
             <div class="columns is-justify-content-space-between">
                 <!-- Linker kolom -->
@@ -107,6 +107,15 @@
                         <h2>Channels</h2>
                         <h2>Channels</h2>
                         <h2>Channels</h2>
+                    </div>
+                </div>
+
+                <div class="column is-half" id="column-chat">
+                    <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
+                        style="max-width: 680px; max-height: 565px; overflow-y: auto;">
+
+                        <!-- Hier wordt vanuit JS berichten geinjecteerd -->
+
                     </div>
                 </div>
 
@@ -127,12 +136,7 @@
 
             <div class="columns mb-0">
                 <div class="column is-half is-offset-one-quarter">
-                    <div class="is-flex-direction-column-reverse mx-auto" id="chat-messages"
-                        style="max-width: 680px; max-height: 565px; overflow-y: auto;">
 
-                        <!-- Hier wordt vanuit JS berichten geinjecteerd -->
-
-                    </div>
                 </div>
             </div>
 
