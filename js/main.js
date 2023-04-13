@@ -87,7 +87,6 @@ const onAppend = function (elem, f) {
 	});
 	observer.observe(elem, { childList: true });
 };
-
 onAppend(msgContainer, function (added) {
 	console.log("onAdded: ", added);
 
