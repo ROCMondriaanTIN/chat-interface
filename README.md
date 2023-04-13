@@ -17,3 +17,5 @@ We hebben dus 3 onderdelen:
 - Hoe reageer je op de enter-toets
 - Hoe kun je de berichten stapelen en van onderen naar boven schuiven
 
+## Demo
+![](https://github.com/ROCMondriaanTIN/chat-interface/blob/master/2023-04-13%2021-56-36.gif)
