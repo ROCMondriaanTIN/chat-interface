@@ -10,17 +10,18 @@ const closeBtn = document.querySelector("#delete-message");
 let toggle = true;
 
 sendBtn.addEventListener("click", (e) => {
-	const message = msgInput.value;
-	if (message.trim() === "") {
+	const messageText = msgInput.value;
+
+	if (messageText.trim() === "") {
 		alert.style.visibility = "visible";
+
 		return;
 	}
 
+    const message = createMessageObject(messageText);
+
 	const msgBox = createMessageBox(message, toggle);
-	// const msgBox = createMessage(message, toggle);
-
 	msgContainer.innerHTML += msgBox;
-
 	msgInput.value = "";
 
 	toggle = !toggle;
@@ -38,6 +39,17 @@ msgInput.addEventListener("keypress", (e) => {
 // 	alert.style.visibility = "hidden";
 // });
 
+function createMessageObject(message) {
+    const newMessage = {
+        ID: 0,
+        userName: "Matthijs",
+        date: new Date().toLocaleTimeString(),
+        messageText: message
+    }
+
+    return newMessage;
+}
+
 function createMessageBox(message, toggle) {
 	const box = `
             <div class="messagebox ${toggle ? "bg_enable" : ""}">
@@ -48,10 +60,10 @@ function createMessageBox(message, toggle) {
             </div>
             <div class="messagebox__body">
                 <div class="messagebox__header">
-                    User 12345<span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                    User 12345<span class="timestamp">${message.date}</span>
                 </div>
                 <div class="messagebox__content">
-                    ${message}
+                    ${message.messageText}
                 </div>
             </div>
             <div class="messagebox__footer">
@@ -62,12 +74,12 @@ function createMessageBox(message, toggle) {
 	return box;
 }
 
-function createMessage(message, sending = true) {
+function createMessageBox(message, sending = true) {
 	const box = `
             <article class="message ${sending ? "is-info" : "is-success"}">
                 <div class="message-body p-1">
                     <h3><strong>Neo</strong></h3>
-                    <p class="py-1">${message}</p>
+                    <p class="py-1">${message.messageText}</p>
                     <div class="is-flex"><span style="font-size:11px; font-weight: bold">${new Date().toLocaleTimeString()}</span></div>
                 </div>
             </article>
@@ -92,3 +104,6 @@ onAppend(msgContainer, function (added) {
 
 	msgContainer.scrollTop = msgContainer.scrollHeight;
 });
+
+
+
