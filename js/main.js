@@ -4,16 +4,29 @@ const scrollElement = document.querySelector("#column-chat");
 const msgContainer = document.querySelector("#chat-messages");
 const msgInput = document.querySelector("#text-message");
 const sendBtn = document.querySelector("#chat-send");
-const alert = document.querySelector("#alert-container");
 const closeBtn = document.querySelector("#delete-message");
 
 let toggle = true;
 
 sendBtn.addEventListener("click", (e) => {
-	const messageText = msgInput.value;
+	sendMessage();
+});
+
+msgInput.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    sendMessage();
+  }
+})
+
+function sendMessage() {
+    const messageText = msgInput.value;
 
 	if (messageText.trim() === "") {
-		alert.style.visibility = "visible";
+		alert("Typ een bericht");
 
 		return;
 	}
@@ -25,19 +38,8 @@ sendBtn.addEventListener("click", (e) => {
 	msgInput.value = "";
 
 	toggle = !toggle;
-});
+}
 
-msgInput.addEventListener("keypress", (e) => {
-	if (e.key === "Enter") {
-		e.preventDefault();
-
-		sendBtn.click();
-	}
-});
-
-// closeBtn.addEventListener("click", (e) => {
-// 	alert.style.visibility = "hidden";
-// });
 
 function createMessageObject(message) {
     const newMessage = {
