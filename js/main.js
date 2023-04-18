@@ -77,10 +77,12 @@ function createMessageBox(message, toggle) {
 }
 
 function createMessageBox(message, sending = true) {
+    const name = toggle ? "Chatbot": "Matthijs";
+
 	const box = `
             <article class="message ${sending ? "is-info" : "is-success"}">
                 <div class="message-body p-1">
-                    <h3><strong>Neo</strong></h3>
+                    <h3><strong>${name}</strong></h3>
                     <p class="py-1">${message.messageText}</p>
                     <div class="is-flex"><span style="font-size:11px; font-weight: bold">${new Date().toLocaleTimeString()}</span></div>
                 </div>
@@ -101,6 +103,7 @@ const onAppend = function (elem, f) {
 	});
 	observer.observe(elem, { childList: true });
 };
+
 onAppend(msgContainer, function (added) {
 	console.log("onAdded: ", added);
 
